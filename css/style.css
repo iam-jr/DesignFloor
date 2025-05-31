@@ -1,0 +1,578 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Container Class */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.nav {
+    display: none;
+}
+
+/* Header Section */
+header {
+    background-color: #ffffff;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+}
+
+header .logo img {
+    width: 150px;
+    animation: logoAnimation 2s ease-out forwards;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+header nav a {
+    color: white;
+    text-transform: uppercase;
+    margin: 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+header nav a:hover {
+    color: #ff2b2b;
+}
+
+header nav a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff2b2b;
+    transition: width 0.3s ease;
+}
+
+header nav a:hover:before {
+    width: 100%;
+}
+
+/* Social Media Icons */
+header .social-media {
+    margin-top: 15px;
+    text-align: center;
+}
+
+header .social-media a {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+header .social-media a:hover {
+    color: #ff2b2b;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/hero-construction.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #ff2b2b;
+    animation: slideUp 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+/* Services Section */
+.services {
+    background-color: white;
+    padding: 50px 0;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #0c2a5b;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.service-item {
+    background-color: #f4f4f4;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: scaleIn 0.5s ease-in-out;
+}
+
+.service-item i {
+    font-size: 3rem;
+    color: #0c2a5b;
+    position: initial;
+}
+
+.service-item p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-item:hover i {
+    transform: rotate(360deg);
+}
+
+/* About Us Section */
+.about {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    animation: fadeInUp 2s ease-out;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #0c2a5b;
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+    opacity: 0;
+    animation: fadeInText 2s ease-in-out forwards 0.5s;
+}
+
+/* Contact Form Section */
+.contact-form {
+    background-color: white;
+    padding: 50px 0;
+    text-align: center;
+    animation: fadeInUp 2s ease-out;
+}
+
+.contact-form h3 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #0c2a5b;
+}
+
+.form-container {
+    background-color: #f4f4f4;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group button {
+    background-color: #0c2a5b;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.form-group button:hover {
+    background-color: #ff2b2b;
+    animation: buttonPulse 0.5s ease-in-out forwards;
+}
+
+/* Footer Section */
+footer {
+    background-color: #0c2a5b;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    animation: fadeInUp 2s ease-out;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav a {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    .form-container {
+        padding: 30px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+    }
+    .construction-banner {
+        display:contents;
+    }
+    .construction-text h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0;
+        color: #ff2b2b;
+        display: none;
+    }
+    .construction-text h2 {
+        font-size: 23px;
+        display: none;
+        font-weight: bold;
+        margin: 0;
+        color: #129efb;
+    }
+    .construction-text p {
+        font-size: 14px;
+        display: none;
+        margin-top: 5px;
+        color: #000000;
+        cursor: none;
+    }
+}
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+
+    .form-group button {
+        padding: 12px 20px;
+    }
+}
+
+/* Container for logo and large construction design */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Construction banner next to the logo */
+.construction-banner {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between the icon and text */
+    background-color: #ffffff; /* Dark background to make it stand out */
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    color: #fff;
+}
+
+/* Construction icon styling */
+.construction-graphic {
+    font-size: 40px; /* Large icon */
+    color: #000000; /* Construction color (yellow/orange) */
+}
+
+/* Construction text styling */
+.construction-text h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    color: #ff2b2b;
+}
+.construction-text h2 {
+    font-size: 23px;
+    font-weight: bold;
+    margin: 0;
+    color: #129efb;
+}
+.construction-text p {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #000000;
+    cursor: none;
+}
+
+/* Adjust the spacing between the logo and the banner */
+.logo {
+    margin-right: 20px;
+}
+
+/* Optional: Hover effect for the construction banner */
+.construction-banner:hover {
+    background-color: #ffffff;
+    color: #333;
+    transform: translateY(-3px); /* Small lift effect on hover */
+    transition: 0.3s ease;
+}
+
+.construction-banner p:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Video Popup container */
+.video-popup-container {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-popup-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Service Item */
+.service-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Video Preview - hidden by default */
+.video-preview {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video-preview iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* When hovering or clicking the service item */
+.service-item.active .video-preview {
+    display: block;
+}
+
+.service-item i {
+    font-size: 2rem;
+    color: #0c2a5b;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .service-item i {
+        font-size: 1.5rem;
+    }
+
+    .video-popup-container {
+        width: 95%;
+        height: 50%;
+    }
+
+    .video-preview iframe {
+        height: 100%;
+    }
+
+    /* Adjust service items for mobile */
+    .service-item {
+        padding: 15px;
+    }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 480px) {
+    .service-item i {
+        font-size: 1.2rem;
+    }
+
+    .video-popup-container {
+        height: 45%;
+    }
+}

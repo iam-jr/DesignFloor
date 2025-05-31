@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Floors PR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Video Popup container */
+        .video-popup-container {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 60%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-popup-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Service Item */
+        .service-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        /* Video Preview - hidden by default */
+        .video-preview {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .video-preview iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* When hovering or clicking the service item */
+        .service-item.active .video-preview {
+            display: block;
+        }
+
+        .service-item i {
+            font-size: 2rem;
+            color: #0c2a5b;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .service-item i {
+                font-size: 1.5rem;
+            }
+
+            .video-popup-container {
+                width: 95%;
+                height: 50%;
+            }
+
+            .video-preview iframe {
+                height: 100%;
+            }
+
+            /* Adjust service items for mobile */
+            .service-item {
+                padding: 15px;
+            }
+        }
+
+        /* Additional responsive adjustments */
+        @media (max-width: 480px) {
+            .service-item i {
+                font-size: 1.2rem;
+            }
+
+            .video-popup-container {
+                height: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sección de Cabecera (Barra de Navegación) -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/designfloorlogowhite.PNG" alt="Logo de CIC Construcción">
+            </div>
+            <div class="construction-banner">
+                <div class="construction-graphic">
+                    <i class="bx bx-list-check"></i>
+                </div>
+                <div class="construction-text">
+                    <h1>Design Floors PR</h1>
+                    <h2>Construcción de Calidad</h2>
+                    <p>Transformando Ideas en Proyectos Reales</p>
+                </div>
+            </div>
+            <nav>
+                <div class="nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="aboutus.html">Sobre Nosotros</a>
+                    <a href="services.html">Servicios</a>
+                    <a href="projects.html">Proyectos</a>
+                    <a href="contact.html">Contacto</a>
+                </div>
+            </nav>
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="https://instagram.com/daykicks.pr" target="_blank"><i class='bx bxl-instagram-alt'></i></a> 
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+        <div class="container1">
+            <h1>Servicios de Construcción de Calidad</h1>
+            <p>Construyendo Sueños con Excelencia</p>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section class="services">
+        <div class="container2">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-list">
+                <div class="service-item" data-video="https://www.youtube.com/watch?v=4BzjUq921Y4">
+                    <i class="bx bx-buildings"></i>
+                    <p>Construcción Comercial</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/videoID1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="service-item" data-video="https://www.youtube.com/embed/videoID2">
+                    <i class="bx bx-paint"></i>
+                    <p>Pintura Interior y Exterior</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/videoID2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="service-item" data-video="https://www.youtube.com/embed/videoID3">
+                    <i class="bx bx-body"></i>
+                    <p>Trabajo en Cemento y Epoxi</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/videoID3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="service-item" data-video="https://www.youtube.com/embed/videoID4">
+                    <i class="bx bx-home"></i>
+                    <p>Instalación de Pisos</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/videoID4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="service-item" data-video="https://www.youtube.com/embed/videoID5">
+                    <i class="bx bx-cabinet"></i>
+                    <p>Reparación de Pisos</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/videoID5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="service-item" data-video="https://www.youtube.com/embed/videoID6">
+                    <i class="bx bx-reset"></i>
+                    <p>Remodelación de Pisos</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/videoID6" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del Pie de Página -->
+    <footer>
+        <p>&copy; 2024 Design Floors PR. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Popup Video Container -->
+    <div class="video-popup-container" id="video-popup">
+        <div class="video-popup-close" onclick="closeVideoPopup()">×</div>
+        <iframe id="video-frame" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+       
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
